@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	
+		
+		<record id="view_import_china_address_info_wizard" model="ir.ui.view">
+            <field name="name">花果山网店刷单发货</field>
+            <field name="model">hgs.import_china_address</field>
+            <field name="arch" type="xml">
+                <form string="import_china_address" version="7.0">
+                    <group> 
+                        <field name="xml" />
+                    </group>
+                    <footer>
+                        <button name="import_china_address_from_xml" string="导入地址" type="object"  class="oe_highlight"  />
+                        or
+                        <button string="取消" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+		<!-- 
+        <record model="ir.actions.act_window" id="act_hgs_import_order_from_excel">
+            <field name="name">从excel导入订单</field>
+            <field name="res_model">hgs.import_order_from_excel</field>
+            <field name="src_model">hgs.shop</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+         -->
+        
+        
+		<record id="action_import_china_address_info_wizard" model="ir.actions.act_window">
+             <field name="name">导入中国行政地址数据 </field>
+             <field name="res_model">hgs.import_china_address</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">form</field>
+             <field name="view_id" ref="view_import_china_address_info_wizard"/>
+             <field name="target">new</field>
+        </record>
+		<menuitem action="action_import_china_address_info_wizard"  id="hgs_import_china_address_menu" name="导入中国省市区" parent="base.menu_config" sequence="10" />
+		
+    </data>
+</openerp>
